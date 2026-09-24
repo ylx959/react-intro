@@ -8,31 +8,31 @@ import { v4 as uuidV4 } from 'uuid'
 import dayjs from 'dayjs'
 import axios from 'axios'
 
-// 当前登录用户信息
+// 當前登錄用戶信息
 const user = {
-  // 用户id
+  // 用戶id
   uid: '30009257',
-  // 用户头像
+  // 用戶頭像
   avatar,
-  // 用户昵称
+  // 用戶暱稱
   uname: '黑马前端',
 }
-// 导航 Tab 数组
+// 導航 Tab 數組
 const tabs = [
   { type: 'hot', text: '最热' },
   { type: 'time', text: '最新' },
 ]
 
-// 封装请求数据的Hook
+// 封裝請求數據的Hook
 
 function useGetList () {
-  // 获取接口数据渲染
+  // 獲取接口數據渲染
   const [commentList, setCommentList] = useState([])
 
   useEffect(() => {
-    // 请求数据
+    // 請求數據
     async function getList () {
-      // axios请求数据
+      // axios請求數據
       const res = await axios.get(' http://localhost:3004/list')
       setCommentList(res.data)
     }
@@ -46,12 +46,12 @@ function useGetList () {
 }
 
 
-// 封装Item组件
+// 封裝Item組件
 
 function Item ({ item, onDel }) {
   return (
     <div className="reply-item">
-      {/* 头像 */}
+      {/* 頭像 */}
       <div className="root-reply-avatar">
         <div className="bili-avatar">
           <img
@@ -63,19 +63,19 @@ function Item ({ item, onDel }) {
       </div>
 
       <div className="content-wrap">
-        {/* 用户名 */}
+        {/* 用戶名 */}
         <div className="user-info">
           <div className="user-name">{item.user.uname}</div>
         </div>
-        {/* 评论内容 */}
+        {/* 評論內容 */}
         <div className="root-reply">
           <span className="reply-content">{item.content}</span>
           <div className="reply-info">
-            {/* 评论时间 */}
+            {/* 評論時間 */}
             <span className="reply-time">{item.ctime}</span>
-            {/* 评论数量 */}
+            {/* 評論數量 */}
             <span className="reply-time">点赞数:{item.like}</span>
-            {/* 条件：user.id === item.user.id */}
+            {/* 條件：user.id === item.user.id */}
             {user.uid === item.user.uid &&
               <span className="delete-btn" onClick={() => onDel(item.rpid)}>
                 删除
@@ -89,55 +89,55 @@ function Item ({ item, onDel }) {
 
 
 const App = () => {
-  // 渲染评论列表
-  // 1. 使用useState维护list
+  // 渲染評論列表
+  // 1. 使用useState維護list
   // const [commentList, setCommentList] = useState(_.orderBy(list, 'like', 'desc'))
   const { commentList, setCommentList } = useGetList()
 
-  // 删除功能
+  // 刪除功能
   const handleDel = (id) => {
     console.log(id)
-    // 对commentList做过滤处理
+    // 對commentList做過濾處理
     setCommentList(commentList.filter(item => item.rpid !== id))
   }
 
-  // tab切换功能
-  // 1. 点击谁就把谁的type记录下来
-  // 2. 通过记录的type和每一项遍历时的type做匹配 控制激活类名的显示
+  // tab切換功能
+  // 1. 點擊誰就把誰的type記錄下來
+  // 2. 通過記錄的type和每一項遍歷時的type做匹配 控制激活類名的顯示
   const [type, setType] = useState('hot')
   const handleTabChange = (type) => {
     console.log(type)
     setType(type)
-    // 基于列表的排序
+    // 基於列表的排序
     if (type === 'hot') {
-      // 根据点赞数量排序 
+      // 根據點讚數量排序 
       // lodash
       setCommentList(_.orderBy(commentList, 'like', 'desc'))
     } else {
-      // 根据创建时间排序
+      // 根據創建時間排序
       setCommentList(_.orderBy(commentList, 'ctime', 'desc'))
     }
   }
 
-  // 发表评论
+  // 發表評論
   const [content, setContent] = useState('')
   const inputRef = useRef(null)
   const handlPublish = () => {
     setCommentList([
       ...commentList,
       {
-        rpid: uuidV4(), // 随机id
+        rpid: uuidV4(), // 隨機id
         user: {
           uid: '30009257',
           avatar,
           uname: '黑马前端',
         },
         content: content,
-        ctime: dayjs(new Date()).format('MM-DD hh:mm'), // 格式化 月-日 时:分
+        ctime: dayjs(new Date()).format('MM-DD hh:mm'), // 格式化 月-日 時:分
         like: 66,
       }
     ])
-    // 1. 清空输入框的内容
+    // 1. 清空輸入框的內容
     setContent('')
     // 2. 重新聚焦  dom(useRef) - focus
     inputRef.current.focus()
@@ -145,16 +145,16 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* 导航 Tab */}
+      {/* 導航 Tab */}
       <div className="reply-navigation">
         <ul className="nav-bar">
           <li className="nav-title">
             <span className="nav-title-text">评论</span>
-            {/* 评论数量 */}
+            {/* 評論數量 */}
             <span className="total-reply">{10}</span>
           </li>
           <li className="nav-sort">
-            {/* 高亮类名： active */}
+            {/* 高亮類名： active */}
             {tabs.map(item =>
               <span
                 key={item.type}
@@ -167,16 +167,16 @@ const App = () => {
       </div>
 
       <div className="reply-wrap">
-        {/* 发表评论 */}
+        {/* 發表評論 */}
         <div className="box-normal">
-          {/* 当前用户头像 */}
+          {/* 當前用戶頭像 */}
           <div className="reply-box-avatar">
             <div className="bili-avatar">
               <img className="bili-avatar-img" src={avatar} alt="用户头像" />
             </div>
           </div>
           <div className="reply-box-wrap">
-            {/* 评论框 */}
+            {/* 評論框 */}
             <textarea
               className="reply-box-textarea"
               placeholder="发一条友善的评论"
@@ -184,15 +184,15 @@ const App = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />
-            {/* 发布按钮 */}
+            {/* 發佈按鈕 */}
             <div className="reply-box-send">
               <div className="send-text" onClick={handlPublish}>发布</div>
             </div>
           </div>
         </div>
-        {/* 评论列表 */}
+        {/* 評論列表 */}
         <div className="reply-list">
-          {/* 评论项 */}
+          {/* 評論項 */}
           {commentList.map(item => <Item key={item.id} item={item} onDel={handleDel} />)}
         </div>
       </div>
