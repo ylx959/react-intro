@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+#  React 18 學習項目 (ylx)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+參考 [Jikeyuan (GitHub)](https://github.com/BaichuanTang/Jikeyuan) 來學習的
 
-## Available Scripts
+黑馬程序員的 React 18 課程 跟著做的極客園項目 這裡放筆記跟心得
 
-In the project directory, you can run:
+## 項目結構
 
-### `npm start`
+- `ylx-frontend/`：前端項目 (自己跟著課程寫的)
+- `React 基礎 - 配套資料/`：day01 ~ day11 的 PPT、MD筆記、code
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+參考：[點評視頻](https://www.bilibili.com/video/BV1M34y1w7D6/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 學到什麼
 
-### `npm test`
+1. **React 18**：組件、jsx、useState、useEffect 這些核心用法
+2. **React Router**：路由配置、頁面跳轉、路由守衛
+3. **Redux**：狀態管理 數據流怎麼走 (day10 還有講 zustand)
+4. **工程化**：craco 配置別名 `@`、模塊化、項目打包
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 心得
 
-### `npm run build`
+- React 只要會 JavaScript + HTML + CSS 就能直接寫 概念比 Vue 少
+- Vue 語法糖多 要記的東西多 但上手之後寫起來比較順
+- React 是單向數據流 Vue 有雙向綁定 所以 React 寫起來比較囉嗦
+- Vue 一個頁面就能搞定 導入模塊也比較不容易亂
+- 核心就幾個函數：`useState`、`useEffect` 用 redux 再加一個 `useDispatch`
+- 注意：HTML 跟 CSS 課程裡大部分是直接複製的 自己寫 CSS 還不太行 之後要補
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 問題 / 可以改進的地方
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. 沒有接口文檔 資料裡也找不到
+2. 接口調用的寫法還是很複雜 就算 day10 講了 zustand 也一樣
+3. 沒登錄用高階組件 (HOC) 強制跳回登錄頁 我覺得不太合理
+   - 登錄狀態應該由後端決定 看狀態碼 401 來判斷要不要跳轉
+   - 本地 Token 過期 後端回 401 頁面會直接崩
+4. P99 配置默認跳轉時 Layout 裡的路由要改成 `/home` 不是 `/`
+   - 不然 P101 高亮菜單會對不上 (課程裡沒提到要檢查首頁高亮)
+5. React 項目的命名感覺有點亂 沒有 Vue 簡潔
