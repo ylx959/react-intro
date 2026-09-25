@@ -9,13 +9,10 @@ import { useState } from "react"
 // 2. 绑定onChange事件 通过事件参数e拿到输入框最新的值 反向修改到react状态身上
 
 function App () {
-  const [value, setValue] = useState('')
-  return (
+  const [value,setValue ]=useState('');
+  return(
     <div>
-      <input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        type="text" />
+      <input/>
     </div>
   )
 }
