@@ -122,6 +122,7 @@ const App = () => {
 
   // 發表評論
   const [content, setContent] = useState('')
+  // 建立一個 ref 物件，之後透過 inputRef.current 取得 DOM 元素
   const inputRef = useRef(null)
   const handlPublish = () => {
     setCommentList([
@@ -138,10 +139,10 @@ const App = () => {
         like: 10,
       }
     ])
-    // 1. 清空輸入框的內容
+    // 1. 清空輸入框的內容（useState用法)
     setContent('')
     // 2. 重新聚焦  dom(useRef) - focus
-    inputRef.current.focus()
+    inputRef.current.focus() 
   }
 
   return (

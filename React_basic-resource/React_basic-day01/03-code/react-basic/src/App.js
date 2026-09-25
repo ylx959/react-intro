@@ -1,21 +1,28 @@
-// 受控绑定表单
+// 父傳子
+// 1. 父組件傳遞數據  子組件標簽身上綁定屬性
+// 2. 子組件接收數據  props的參數
 
-import { useState } from "react"
+function Son (props) {
+  // props：對象裡面包含了父組件傳遞過來的所有的數據
+  // { name:'父組件中的數據'}
+  console.log(props)
+  return <div>this is son, {props.name}, jsx: {props.child}</div>
+}
 
-// 1. 声明一个react状态 - useState
-
-// 2. 核心绑定流程
-// 1. 通过value属性绑定react状态
-// 2. 绑定onChange事件 通过事件参数e拿到输入框最新的值 反向修改到react状态身上
 
 function App () {
-  const [value, setValue] = useState('')
+  const name = 'this is app name'
   return (
     <div>
-      <input
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        type="text" />
+      <Son
+        name={name}
+        age={18}
+        isTrue={false}
+        list={['vue', 'react']}
+        obj={{ name: 'jack' }}
+        cb={() => console.log(123)}
+        child={<span>this is span</span>}
+      />
     </div>
   )
 }

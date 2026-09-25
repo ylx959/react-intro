@@ -1,4 +1,4 @@
-// 导入样式
+// 導入樣式
 import './index.css'
 
 const style = {
@@ -9,9 +9,9 @@ const style = {
 function App () {
   return (
     <div>
-      {/* 行内样式控制 */}
+      {/* 行內樣式控制 */}
       <span style={style}>this is span</span>
-      {/* 通过class类名控制 */}
+      {/* 通過class類名控制 */}
       <span className="foo">this is class foo</span>
     </div>
   )

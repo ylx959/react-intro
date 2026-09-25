@@ -2,13 +2,13 @@
 
 import { createContext, useContext } from "react"
 
-// 1. createContext方法创建一个上下文对象
+// 1. createContext方法創建一個上下文對象
 
 const MsgContext = createContext()
 
-// 2. 在顶层组件 通过Provider组件提供数据
+// 2. 在頂層組件 通過Provider組件提供數據
 
-// 3. 在底层组件 通过useContext钩子函数使用数据
+// 3. 在底層組件 通過useContext鉤子函數使用數據
 
 function A () {
   return (

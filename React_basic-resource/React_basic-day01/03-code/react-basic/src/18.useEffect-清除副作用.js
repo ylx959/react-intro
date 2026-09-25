@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 
 function Son () {
-  // 1. 渲染时开启一个定时器
+  // 1. 渲染時開啟一個定時器
   useEffect(() => {
     const timer = setInterval(() => {
       console.log('定时器执行中...')
     }, 1000)
 
     return () => {
-      // 清除副作用(组件卸载时)
+      // 清除副作用(組件卸載時)
       clearInterval(timer)
     }
   }, [])
@@ -16,7 +16,7 @@ function Son () {
 }
 
 function App () {
-  // 通过条件渲染模拟组件卸载
+  // 通過條件渲染模擬組件卸載
   const [show, setShow] = useState(true)
   return (
     <div>

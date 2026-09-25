@@ -4,19 +4,19 @@ function App () {
   let [count, setCount] = useState(0)
 
   const handleClick = () => {
-    // 直接修改 无法引发视图更新
+    // 直接修改 無法引發視圖更新
     // count++
     // console.log(count)
     setCount(count + 1)
   }
 
-  // 修改对象状态
+  // 修改對象狀態
   const [form, setForm] = useState({ name: 'jack' })
 
   const changeForm = () => {
-    // 错误写法：直接修改
+    // 錯誤寫法：直接修改
     // form.name = 'john'
-    // 正确写法：setFrom 传入一个全新的对象
+    // 正確寫法：setFrom 傳入一個全新的對象
     setForm({
       ...form,
       name: 'john'

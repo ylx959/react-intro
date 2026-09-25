@@ -1,11 +1,11 @@
 
-// 1. 通过子传父 A -> App
-// 2. 通过父传子 App -> B
+// 1. 通過子傳父 A -> App
+// 2. 通過父傳子 App -> B
 
 import { useState } from "react"
 
 function A ({ onGetAName }) {
-  // Son组件中的数据
+  // Son組件中的數據
   const name = 'this is A name'
   return (
     <div>

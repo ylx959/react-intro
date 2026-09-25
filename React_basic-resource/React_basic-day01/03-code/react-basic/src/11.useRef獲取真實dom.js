@@ -1,11 +1,11 @@
-// React中获取DOM
+// React中獲取DOM
 
 import { useRef } from "react"
 
-// 1. useRef生成ref对象 绑定到dom标签身上
+// 1. useRef生成ref對象 綁定到dom標簽身上
 
-// 2. dom可用时，ref.current获取dom
-// 渲染完毕之后dom生成之后才可用
+// 2. dom可用時，ref.current獲取dom
+// 渲染完畢之後dom生成之後才可用
 
 function App () {
   const inputRef = useRef(null)
