@@ -97,7 +97,7 @@ const App = () => {
   // 刪除功能
   const handleDel = (id) => {
     console.log(id)
-    // 對commentList做過濾處理
+    // 對commentList做過濾處
     setCommentList(commentList.filter(item => item.rpid !== id))
   }
 
@@ -111,7 +111,8 @@ const App = () => {
     // 基於列表的排序
     if (type === 'hot') {
       // 根據點讚數量排序 
-      // lodash
+      // lodash 套件
+      //_.orderBy(要排序的資料, 按照什麼排序, 排序方向)"desc"=descending
       setCommentList(_.orderBy(commentList, 'like', 'desc'))
     } else {
       // 根據創建時間排序
@@ -134,7 +135,7 @@ const App = () => {
         },
         content: content,
         ctime: dayjs(new Date()).format('MM-DD hh:mm'), // 格式化 月-日 時:分
-        like: 66,
+        like: 10,
       }
     ])
     // 1. 清空輸入框的內容
@@ -155,6 +156,7 @@ const App = () => {
           </li>
           <li className="nav-sort">
             {/* 高亮類名： active */}
+            {/* classNames(靜態的類名,動態類名key表示要控制的類名,value表示條件，true 的時候顯示類名) */}
             {tabs.map(item =>
               <span
                 key={item.type}
