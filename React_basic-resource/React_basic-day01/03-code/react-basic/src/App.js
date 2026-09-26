@@ -1,28 +1,32 @@
-// 父傳子
-// 1. 父組件傳遞數據  子組件標簽身上綁定屬性
-// 2. 子組件接收數據  props的參數
+// 核心：在子組件中調用父組件中的函數並傳遞實參
 
-function Son (props) {
-  // props：對象裡面包含了父組件傳遞過來的所有的數據
-  // { name:'父組件中的數據'}
-  console.log(props)
-  return <div>this is son, {props.name}, jsx: {props.child}</div>
+import { useState } from "react"
+
+function Son ({ onGetSonMsg }) {
+  // Son組件中的數據
+  const sonMsg="this is son"
+  return(
+    <div>this is son
+      <button onClick={() => onGetSonMsg(sonMsg)}>sendMsg</button>
+    </div>
+  )
 }
 
+//把 getMsg 用 onGetSonMsg 存入
+//然後他會傳到Son中,讓Son 使用
 
 function App () {
-  const name = 'this is app name'
-  return (
+ 
+  const[msg,setMsg]=useState('')
+
+  const getMsg=(msg)=>{
+    console.log(msg)
+    setMsg(msg)
+  }
+  return(
     <div>
-      <Son
-        name={name}
-        age={18}
-        isTrue={false}
-        list={['vue', 'react']}
-        obj={{ name: 'jack' }}
-        cb={() => console.log(123)}
-        child={<span>this is span</span>}
-      />
+      this is App
+      <Son onGetSonMsg={getMsg}/>
     </div>
   )
 }
