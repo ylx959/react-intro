@@ -9,7 +9,7 @@ import { useState } from "react"
 function useToggle () {
   // 可複用的邏輯代碼
   const [value, setValue] = useState(true)
-
+  //()=> 建立一個函式，但現在先不要執行
   const toggle = () => setValue(!value)
 
   // 哪些狀態和回調函數需要在其他組件中使用 return

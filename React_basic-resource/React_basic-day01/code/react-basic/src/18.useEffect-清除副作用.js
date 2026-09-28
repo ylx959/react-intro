@@ -12,7 +12,8 @@ function Son () {
       // 清除副作用(組件卸載時)
       clearInterval(timer)
     }
-  }, [])
+  }, [])//useEffect
+  
   return <div>this is son</div>
 }
 
