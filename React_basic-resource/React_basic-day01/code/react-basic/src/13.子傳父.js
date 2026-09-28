@@ -14,6 +14,9 @@ function Son ({ onGetSonMsg }) {
   )
 }
 
+//把 getMsg 用 onGetSonMsg 存入
+//然後他會傳到Son中,讓Son 使用
+
 function App () {
   const [msg, setMsg] = useState('')
   const getMsg = (msg) => {
