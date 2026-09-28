@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 function Son () {
   // 1. 渲染時開啟一個定時器
   useEffect(() => {
+    // 每隔 1 秒重複執行一次
     const timer = setInterval(() => {
       console.log('定时器执行中...')
     }, 1000)
