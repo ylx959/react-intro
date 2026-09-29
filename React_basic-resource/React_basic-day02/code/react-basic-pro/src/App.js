@@ -26,6 +26,7 @@ const tabs = [
 // 封裝請求資料的Hook
 
 function useGetList () {
+
   // 取得介面資料並渲染
   const [commentList, setCommentList] = useState([])
 
@@ -194,7 +195,7 @@ const App = () => {
         <div className="reply-list">
           {/* 評論項 */}
           {commentList.map(item => <Item key={item.id} item={item} onDel={handleDel} />)}
-        </div>
+        </div> 
       </div>
     </div>
   )
