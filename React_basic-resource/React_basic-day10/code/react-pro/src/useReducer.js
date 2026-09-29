@@ -2,7 +2,7 @@
 
 import { useReducer } from "react"
 
-// 1. 定义reducer函数 根据不同的action 返回不同的状态
+// 1. 定義reducer函式 根據不同的action 返回不同的狀態
 
 function reducer (state, action) {
   switch (action.type) {
@@ -17,9 +17,9 @@ function reducer (state, action) {
   }
 }
 
-// 2. 组件中调用useReducer(reducer, 0) => [state, dispatch]
+// 2. 元件中呼叫useReducer(reducer, 0) => [state, dispatch]
 
-// 3. 调用dispatch({type:'INC'}) => 通知reducer产生一个新的状态 使用这个新状态更新UI
+// 3. 呼叫dispatch({type:'INC'}) => 通知reducer產生一個新的狀態 使用這個新狀態更新UI
 
 
 function App () {

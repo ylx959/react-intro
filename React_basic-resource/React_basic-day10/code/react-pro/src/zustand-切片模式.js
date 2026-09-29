@@ -8,13 +8,13 @@ const URL = 'http://geek.itheima.net/v1_0/channels'
 // channelStore 
 // index.js
 
-// 1. 拆分子模块 再组合起来
+// 1. 拆分子模組 再組合起來
 
 const createCounterStore = (set) => {
   return {
-    // 状态数据
+    // 狀態資料
     count: 0,
-    // 修改状态数据的方法
+    // 修改狀態資料的方法
     inc: () => {
       set((state) => ({ count: state.count + 1 }))
     },
@@ -44,7 +44,7 @@ const useStore = create((...a) => {
 
 
 function App () {
-  // 2. 组件使用
+  // 2. 元件使用
   const { count, inc, fetchGetList, channelList } = useStore()
   useEffect(() => {
     fetchGetList()

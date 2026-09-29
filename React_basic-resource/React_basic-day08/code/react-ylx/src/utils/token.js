@@ -1,4 +1,4 @@
-// 封装基于ls存取删三个方法
+// 封裝基於ls存取刪三個方法
 
 const TOKENKEY = 'token_key'
 

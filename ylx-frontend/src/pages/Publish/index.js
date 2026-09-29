@@ -14,9 +14,9 @@ const {Option} = Select
 const Publish = () => {
   const {channelList} = useChannel();
 
-  // 提交表单
+  // 提交表單
   const onFinish = async (formValue) => {
-    // 校验封面类型是否和实际的图片列表相同
+    // 校驗封面型別是否和實際的圖片列表相同
     if (imageList.length !== imageType) {
       message.warning('封面类型和图片数量不匹配')
       return
@@ -27,7 +27,7 @@ const Publish = () => {
       content,
       cover: {
         type: imageType,
-        // 新增时这样取
+        // 新增時這樣取
         images: imageList.map(item => {
           if(item.response){
             return item.response.data.url
@@ -38,7 +38,7 @@ const Publish = () => {
       },
       channel_id: channel_id
     }
-    // 新增或者编辑
+    // 新增或者編輯
     if(articleId){
       await updateArticleApi(params,articleId)
     }else {
@@ -48,29 +48,29 @@ const Publish = () => {
     message.success(`${articleId ? '编辑文章成功' : '发布文章成功'}`)
   }
 
-  // 如果当前为三图模式，已经完成了上传，选择单图只显示一张，再切换到三图继续显示三张。
+  // 如果當前為三圖模式，已經完成了上傳，選擇單圖只顯示一張，再切換到三圖繼續顯示三張。
   const cacheImageList = useRef([])
   const [imageList, setImageList] = useState([])
   const onUploadChange = (value) => {
     cacheImageList.current = value.fileList
   }
 
-  // 切换图片封面
+  // 切換圖片封面
   const [imageType, setImageType] = useState(0)
   const onRadioChange = (event) => {
     const type = event.target.value;
     setImageType(type)
     if (type === 1) {
-      // 单图，截取第一张展示
+      // 單圖，擷取第一張展示
       const imgList = cacheImageList.current[0] ? [cacheImageList.current[0]] : []
       setImageList(imgList)
     } else if (type === 3) {
-      // 三图，取所有图片展示
+      // 三圖，取所有圖片展示
       setImageList(cacheImageList.current)
     }
   }
 
-  // 回填数据
+  // 回填資料
   const [searchParams] = useSearchParams();
   const articleId = searchParams.get("id");
   const [form] = Form.useForm();
@@ -88,7 +88,7 @@ const Publish = () => {
         return {url}
       }))
     }
-    // 只有在有id时才调用
+    // 只有在有id時才呼叫
     if (articleId) {
       getArticleDetail()
     }

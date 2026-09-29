@@ -10,22 +10,22 @@ const Login = () => {
   const navigate = useNavigate()
   const onFinish = async (values) => {
     console.log(values)
-    // 触发异步action fetchLogin
+    // 觸發非同步action fetchLogin
     await dispatch(fetchLogin(values))
-    // 1. 跳转到首页
+    // 1. 跳轉到首頁
     navigate('/')
-    // 2. 提示一下用户
+    // 2. 提示一下使用者
     message.success('登录成功')
   }
   return (
     <div className="login">
       <Card className="login-container">
         <img className="login-logo" src={logo} alt="" />
-        {/* 登录表单 */}
+        {/* 登入表單 */}
         <Form onFinish={onFinish} validateTrigger="onBlur">
           <Form.Item
             name="mobile"
-            // 多条校验逻辑 先校验第一条 第一条通过之后再校验第二条
+            // 多條校驗邏輯 先校驗第一條 第一條通過之後再校驗第二條
             rules={[
               {
                 required: true,

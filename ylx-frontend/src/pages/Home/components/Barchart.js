@@ -5,10 +5,10 @@ const Barchart = ({title}) => {
   const chartRef = useRef(null);
 
   useEffect(() => {
-    // 保证dom可用，才渲染图表
+    // 保證dom可用，才渲染圖表
 
     const myChart = echarts.init(chartRef.current);
-    // 指定图表的配置项和数据
+    // 指定圖表的配置項和資料
     const option = {
       title: {
         text: title
@@ -30,7 +30,7 @@ const Barchart = ({title}) => {
       ]
     };
 
-    // 使用刚指定的配置项和数据显示图表。
+    // 使用剛指定的配置項和資料顯示圖表。
     option && myChart.setOption(option);
   }, []);
   return (

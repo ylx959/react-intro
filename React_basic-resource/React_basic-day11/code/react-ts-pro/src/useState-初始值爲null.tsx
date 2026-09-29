@@ -17,8 +17,8 @@ function App() {
       age: 18,
     })
   }
-  // 为了类型安全  可选链做类型守卫
-  // 只有user不为null（不为空值）的时候才进行点运算
+  // 為了型別安全  可選鏈做型別守衛
+  // 只有user不為null（不為空值）的時候才進行點運算
   return <>this is app {user?.age}</>
 }
 

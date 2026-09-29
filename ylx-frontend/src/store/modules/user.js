@@ -5,7 +5,7 @@ import {getUserProfileApi, loginApi} from "@/apis/user";
 
 const userStore = createSlice({
   name: "user",
-  // 数据状态
+  // 資料狀態
   initialState: {
     token: getToken() || '',
     userInfo: {}
@@ -28,13 +28,13 @@ const userStore = createSlice({
   }
 });
 
-// 解构出actionCreator
+// 解構出actionCreator
 const {setToken, setUserInfo, clearUserInfo} = userStore.actions;
 
-// 获取reducer函数
+// 獲取reducer函式
 const userReducer = userStore.reducer;
 
-// 异步方法封装
+// 非同步方法封裝
 const fetchLogin = (loginForm) => {
   return async (dispatch) => {
     const result = await loginApi(loginForm)

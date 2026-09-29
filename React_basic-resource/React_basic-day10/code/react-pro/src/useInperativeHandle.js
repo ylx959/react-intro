@@ -1,9 +1,9 @@
 import { forwardRef, useImperativeHandle, useRef } from "react"
 
-// 子组件
+// 子元件
 
 const Son = forwardRef((props, ref) => {
-  // 实现聚焦逻辑
+  // 實現聚焦邏輯
   const inputRef = useRef(null)
   const focusHandler = () => {
     inputRef.current.focus()
@@ -20,7 +20,7 @@ const Son = forwardRef((props, ref) => {
 })
 
 
-// 父组件
+// 父元件
 function App () {
   const sonRef = useRef(null)
   const focusHandler = () => {

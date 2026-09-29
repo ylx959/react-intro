@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// 导入actionCreater
-import { inscrement, decrement, addToNum } from './store/modules/counterStore'
+// 匯入actionCreater
+import { increment, decrement, addToNum } from './store/modules/counterStore'
 import { fetchChannlList } from './store/modules/channelStore'
 function App () {
   const { count } = useSelector(state => state.counter)
   const { channelList } = useSelector(state => state.channel)
   const dispatch = useDispatch()
-  // 使用useEffect触发异步请求执行
+  // 使用useEffect觸發非同步請求執行
   useEffect(() => {
     dispatch(fetchChannlList())
   }, [dispatch])
@@ -15,7 +15,7 @@ function App () {
     <div className="App">
       <button onClick={() => dispatch(decrement())}>-</button>
       {count}
-      <button onClick={() => dispatch(inscrement())}>+</button>
+      <button onClick={() => dispatch(increment())}>+</button>
       <button onClick={() => dispatch(addToNum(10))}>add To 10</button>
       <button onClick={() => dispatch(addToNum(20))}>add To 20</button>
       <ul>

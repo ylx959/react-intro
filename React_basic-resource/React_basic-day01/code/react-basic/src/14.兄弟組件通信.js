@@ -5,7 +5,7 @@
 import { useState } from "react"
 
 function A ({ onGetAName }) {
-  // Son組件中的數據
+  // Son元件中的資料
   const name = 'this is A name'
   return (
     <div>

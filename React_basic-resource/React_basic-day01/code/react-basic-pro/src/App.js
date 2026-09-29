@@ -8,31 +8,31 @@ import { v4 as uuidV4 } from 'uuid'
 import dayjs from 'dayjs'
 import axios from 'axios'
 
-// 當前登錄用戶信息
+// 當前登入使用者資訊
 const user = {
-  // 用戶id
+  // 使用者id
   uid: '30009257',
-  // 用戶頭像
+  // 使用者頭像
   avatar,
-  // 用戶暱稱
+  // 使用者暱稱
   uname: '黑马前端',
 }
-// 導航 Tab 數組
+// 導航 Tab 陣列
 const tabs = [
   { type: 'hot', text: '最热' },
   { type: 'time', text: '最新' },
 ]
 
-// 封裝請求數據的Hook
+// 封裝請求資料的Hook
 
 function useGetList () {
-  // 獲取接口數據渲染
+  // 獲取介面資料渲染
   const [commentList, setCommentList] = useState([])
 
   useEffect(() => {
-    // 請求數據
+    // 請求資料
     async function getList () {
-      // axios請求數據
+      // axios請求資料
       const res = await axios.get(' http://localhost:3004/list')
       setCommentList(res.data)
     }
@@ -46,7 +46,7 @@ function useGetList () {
 }
 
 
-// 封裝Item組件
+// 封裝Item元件
 
 function Item ({ item, onDel }) {
   return (
@@ -63,7 +63,7 @@ function Item ({ item, onDel }) {
       </div>
 
       <div className="content-wrap">
-        {/* 用戶名 */}
+        {/* 使用者名稱 */}
         <div className="user-info">
           <div className="user-name">{item.user.uname}</div>
         </div>
@@ -102,8 +102,8 @@ const App = () => {
   }
 
   // tab切換功能
-  // 1. 點擊誰就把誰的type記錄下來
-  // 2. 通過記錄的type和每一項遍歷時的type做匹配 控制激活類名的顯示
+  // 1. 點選誰就把誰的type記錄下來
+  // 2. 通過記錄的type和每一項遍歷時的type做匹配 控制啟用類名的顯示
   const [type, setType] = useState('hot')
   const handleTabChange = (type) => {
     console.log(type)
@@ -115,7 +115,7 @@ const App = () => {
       //_.orderBy(要排序的資料, 按照什麼排序, 排序方向)"desc"=descending
       setCommentList(_.orderBy(commentList, 'like', 'desc'))
     } else {
-      // 根據創建時間排序
+      // 根據建立時間排序
       setCommentList(_.orderBy(commentList, 'ctime', 'desc'))
     }
   }
@@ -172,7 +172,7 @@ const App = () => {
       <div className="reply-wrap">
         {/* 發表評論 */}
         <div className="box-normal">
-          {/* 當前用戶頭像 */}
+          {/* 當前使用者頭像 */}
           <div className="reply-box-avatar">
             <div className="bili-avatar">
               <img className="bili-avatar-img" src={avatar} alt="用户头像" />
@@ -187,7 +187,7 @@ const App = () => {
               value={content}
               onChange={(e) => setContent(e.target.value)}
             />
-            {/* 發佈按鈕 */}
+            {/* 釋出按鈕 */}
             <div className="reply-box-send">
               <div className="send-text" onClick={handlPublish}>发布</div>
             </div>

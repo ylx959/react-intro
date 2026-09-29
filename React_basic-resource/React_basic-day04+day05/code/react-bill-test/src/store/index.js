@@ -1,4 +1,4 @@
-// 组合子模块 导出store实例
+// 組合子模組 匯出store實例
 
 import { configureStore } from '@reduxjs/toolkit'
 import billReducer from './modules/billStore'

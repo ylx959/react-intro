@@ -2,9 +2,9 @@
 
 import { memo, useState } from "react"
 
-// 1. 验证默认的渲染机制  子跟着父一起渲染
+// 1. 驗證預設的渲染機制  子跟著父一起渲染
 
-// 2. memo进行缓存  只有props发生变化的时候才会重新渲染 （不考虑context）
+// 2. memo進行快取  只有props發生變化的時候才會重新渲染 （不考慮context）
 
 const MemoSon = memo(function Son () {
   console.log('我是子组件，我重新渲染了')
@@ -12,7 +12,7 @@ const MemoSon = memo(function Son () {
 })
 
 // function Son () {
-//   console.log('我是子组件，我重新渲染了')
+//   console.log('我是子元件，我重新渲染了')
 //   return <div>this is son</div>
 // }
 

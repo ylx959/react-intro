@@ -1,4 +1,4 @@
-// 項目的根組件
+// 專案的根元件
 // App -> index.js -> public/index.html(root)
 
 const count = 100
@@ -11,15 +11,15 @@ function App () {
   return (
     <div className="App">
       this is App
-      {/* 使用引號傳遞字符串 */}
+      {/* 使用引號傳遞字串 */}
       {'this is message'}
-      {/* 識別js變量 */}
+      {/* 識別js變數 */}
       {count}
-      {/* 函數調用 */}
+      {/* 函式呼叫 */}
       {getName()}
-      {/* 方法調用 */}
+      {/* 方法呼叫 */}
       {new Date().getDate()}
-      {/* 使用js對象 */}
+      {/* 使用js物件 */}
       <div style={{ color: 'red' }}>this is div</div>
     </div>
   )

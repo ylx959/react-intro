@@ -10,12 +10,12 @@ import { AuthRoute } from '@/components/AuthRoute'
 // import Publish from '@/pages/Publish'
 import { Suspense, lazy } from 'react'
 
-// 1. lazy函数对组件进行导入
+// 1. lazy函式對元件進行匯入
 const Home = lazy(() => import('@/pages/Home'))
 const Article = lazy(() => import('@/pages/Article'))
 const Publish = lazy(() => import('@/pages/Publish'))
 
-// 配置路由实例
+// 配置路由實例
 
 const router = createBrowserRouter([
   {

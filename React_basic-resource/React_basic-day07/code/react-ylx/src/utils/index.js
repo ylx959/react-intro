@@ -1,4 +1,4 @@
-// 统一中转工具模块函数
+// 統一中轉工具模組函式
 // import {request} from '@/utils'
 
 import { request } from './request'

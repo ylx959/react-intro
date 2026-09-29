@@ -6,9 +6,9 @@ const counterStore = createSlice({
   initialState: {
     count: 0
   },
-  // 修改状态的方法 同步方法 支持直接修改
+  // 修改狀態的方法 同步方法 支援直接修改
   reducers: {
-    inscrement (state) {
+    increment (state) {
       state.count++
     },
     decrement (state) {
@@ -20,12 +20,12 @@ const counterStore = createSlice({
   }
 })
 
-// 解构出来actionCreater函数
-const { inscrement, decrement, addToNum } = counterStore.actions
-// 获取reducer
+// 解構出來actionCreater函式
+const { increment, decrement, addToNum } = counterStore.actions
+// 獲取reducer
 const reducer = counterStore.reducer
 
-// 以按需导出的方式导出actionCreater
-export { inscrement, decrement, addToNum }
-// 以默认导出的方式导出reducer
+// 以按需匯出的方式匯出actionCreater
+export { increment, decrement, addToNum }
+// 以預設匯出的方式匯出reducer
 export default reducer

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-// 导入子模块reducer
+// 匯入子模組reducer
 import counterReducer from './modules/counterStore'
 import channelReducer from './modules/channelStore'
 

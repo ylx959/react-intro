@@ -20,7 +20,7 @@ const kaSlice = createSlice({
   }
 })
 
-// 记一笔
+// 記一筆
 const { addBill } = kaSlice.actions
 const createBill = (data) => {
   return async (dispatch) => {
@@ -29,7 +29,7 @@ const createBill = (data) => {
   }
 }
 
-// 获取
+// 獲取
 const { setBillList } = kaSlice.actions
 const getBills = () => {
   return async (dispatch) => {

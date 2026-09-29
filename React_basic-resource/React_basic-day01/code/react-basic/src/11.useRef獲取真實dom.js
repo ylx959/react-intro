@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 
-// 1. useRef生成ref對象 綁定到dom標簽身上
+// 1. useRef生成ref物件 繫結到dom標簽身上
 
 // 2. dom可用時，ref.current獲取dom
 // 渲染完畢之後dom生成之後才可用

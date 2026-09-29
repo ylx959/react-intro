@@ -1,13 +1,13 @@
 // 父傳子
-// 1. 父組件傳遞數據  子組件標簽身上綁定屬性
-// 2. 子組件接收數據  props的參數 
+// 1. 父元件傳遞資料  子元件標簽身上繫結屬性
+// 2. 子元件接收資料  props的引數 
 
-//注意！！！ props 只是讀對象
-//子組件只能讀取props中的數據 不能修改
+//注意！！！ props 只是讀物件
+//子元件只能讀取props中的資料 不能修改
 
 function Son (props) {
-  // props：對象裡面包含了父組件傳遞過來的所有的數據
-  // { name:'父組件中的數據'}
+  // props：物件裡麵包含了父元件傳遞過來的所有的資料
+  // { name:'父元件中的資料'}
   console.log(props)
   return <div>this is son, {props.name}, jsx: {props.child}</div>
 }

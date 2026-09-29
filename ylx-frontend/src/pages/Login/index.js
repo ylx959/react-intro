@@ -10,8 +10,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onFinish = async (values) => {
-    // 账号： 13800000002
-    // 密码： 246810
+    // 賬號： 13800000002
+    // 密碼： 246810
     await dispatch(fetchLogin(values))
     navigate('/')
     message.success('登陆成功')
@@ -21,7 +21,7 @@ const Login = () => {
     <div className="login">
       <Card className="login-container">
         <img className="login-logo" src={logo} alt=""/>
-        {/* 登录表单 */}
+        {/* 登入表單 */}
         <Form validateTrigger="onBlur"
               onFinish={onFinish}
               labelCol={{

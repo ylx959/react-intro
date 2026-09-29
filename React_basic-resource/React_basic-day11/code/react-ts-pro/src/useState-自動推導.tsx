@@ -1,7 +1,7 @@
 // react + ts
 
-// 根据初始值自动推断
-// 场景：明确的初始值
+// 根據初始值自動推斷
+// 場景：明確的初始值
 
 import { useState } from 'react'
 

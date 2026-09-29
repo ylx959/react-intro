@@ -1,4 +1,4 @@
-// 创建路由实例 绑定path element
+// 建立路由實例 繫結path element
 
 import Layout from '@/pages/Layout'
 import Month from '@/pages/Month'

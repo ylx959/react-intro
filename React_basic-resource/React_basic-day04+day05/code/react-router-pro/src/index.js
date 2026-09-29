@@ -4,13 +4,13 @@ import './index.css'
 import reportWebVitals from './reportWebVitals'
 import { RouterProvider } from 'react-router-dom'
 
-// 1. 导入路由router
+// 1. 匯入路由router
 import router from './router'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    {/* 2. 路由绑定 */}
+    {/* 2. 路由繫結 */}
     <RouterProvider router={router}></RouterProvider>
   </React.StrictMode>
 )

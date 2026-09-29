@@ -1,4 +1,4 @@
-// 编写store
+// 編寫store
 
 import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
@@ -8,9 +8,9 @@ const foodsStore = createSlice({
   initialState: {
     // 商品列表
     foodsList: [],
-    // 菜单激活下标值
+    // 選單啟用下標值
     activeIndex: 0,
-    // 购物车列表
+    // 購物車列表
     cartList: []
   },
   reducers: {
@@ -22,9 +22,9 @@ const foodsStore = createSlice({
     changeActiveIndex (state, action) {
       state.activeIndex = action.payload
     },
-    // 添加购物车
+    // 新增購物車
     addCart (state, action) {
-      // 是否添加过？以action.payload.id去cartList中匹配 匹配到了 添加过
+      // 是否新增過？以action.payload.id去cartList中匹配 匹配到了 新增過
       const item = state.cartList.find(item => item.id === action.payload.id)
       if (item) {
         item.count++
@@ -34,33 +34,33 @@ const foodsStore = createSlice({
     },
     // count增
     increCount (state, action) {
-      // 关键点：找到当前要修改谁的count id
+      // 關鍵點：找到當前要修改誰的count id
       const item = state.cartList.find(item => item.id === action.payload.id)
       item.count++
     },
-    // count减
+    // count減
     decreCount (state, action) {
-      // 关键点：找到当前要修改谁的count id
+      // 關鍵點：找到當前要修改誰的count id
       const item = state.cartList.find(item => item.id === action.payload.id)
       if (item.count === 0) {
         return
       }
       item.count--
     },
-    // 清除购物车
+    // 清除購物車
     clearCart (state) {
       state.cartList = []
     }
   }
 })
 
-// 异步获取部分
+// 非同步獲取部分
 const { setFoodsList, changeActiveIndex, addCart, increCount, decreCount, clearCart } = foodsStore.actions
 const fetchFoodsList = () => {
   return async (dispatch) => {
-    // 编写异步逻辑
+    // 編寫非同步邏輯
     const res = await axios.get('http://localhost:3004/takeaway')
-    // 调用dispatch函数提交action
+    // 呼叫dispatch函式提交action
     dispatch(setFoodsList(res.data))
   }
 }

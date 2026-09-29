@@ -1,7 +1,7 @@
-// 定義文章類型
+// 定義文章型別
 const articleType = 3  // 0 1 3
 
-// 定義核心函數（根據文章類型返回不同的JSX模版）
+// 定義核心函式（根據文章型別返回不同的JSX模版）
 
 function getArticleTem () {
   if (articleType === 0) {
@@ -16,7 +16,7 @@ function getArticleTem () {
 function App () {
   return (
     <div className="App">
-      {/* 調用函數渲染不同的模版 */}
+      {/* 呼叫函式渲染不同的模版 */}
       {getArticleTem()}
     </div>
   )

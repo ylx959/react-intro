@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 
-// 1. 获取dom
-// 2. 稳定引用的存储器（定时器管理）
+// 1. 獲取dom
+// 2. 穩定引用的儲存器（定時器管理）
 
 function App() {
   const domRef = useRef<HTMLInputElement>(null)
@@ -11,8 +11,8 @@ function App() {
   const timerId = useRef<number | undefined>(undefined)
 
   useEffect(() => {
-    // 可选链  前面不为空值（null / undefined）执行点运算
-    // 类型守卫 防止出现空值点运算错误
+    // 可選鏈  前面不為空值（null / undefined）執行點運算
+    // 型別守衛 防止出現空值點運算錯誤
     domRef.current?.focus()
 
     timerId.current = setInterval(() => {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const URL = 'http://geek.itheima.net/v1_0/channels'
 
 function App () {
-  // 創建一個狀態數據
+  // 建立一個狀態資料
   //list===[]
   //setlist=修改 list 的函式
   const [list, setList] = useState([])

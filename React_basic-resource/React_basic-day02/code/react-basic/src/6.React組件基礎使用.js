@@ -1,17 +1,17 @@
-// 1. 定义组件
+// 1. 定義元件
 
 const Button = () => {
-  // 业务逻辑组件逻辑
+  // 業務邏輯元件邏輯
   return <button>click me!</button>
 }
 
 function App() {
   return (
     <div className="App">
-      {/* 2. 使用组件（渲染组件） */}
-      {/* 自闭和 */}
+      {/* 2. 使用元件（渲染元件） */}
+      {/* 自閉和 */}
       <Button />
-      {/* 成对标签 */}
+      {/* 成對標籤 */}
       <Button></Button>
     </div>
   )

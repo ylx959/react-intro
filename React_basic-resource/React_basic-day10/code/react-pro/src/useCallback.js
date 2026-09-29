@@ -9,13 +9,13 @@ const Input = memo(function Input ({ onChange }) {
 })
 
 function App () {
-  // 传给子组件的函数
+  // 傳給子元件的函式
   const changeHandler = useCallback((value) => console.log(value), [])
-  // 触发父组件重新渲染的函数
+  // 觸發父元件重新渲染的函式
   const [count, setCount] = useState(0)
   return (
     <div className="App">
-      {/* 把函数作为prop传给子组件 */}
+      {/* 把函式作為prop傳給子元件 */}
       <Input onChange={changeHandler} />
       <button onClick={() => setCount(count + 1)}>{count}</button>
     </div>

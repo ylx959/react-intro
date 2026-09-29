@@ -1,10 +1,10 @@
-// 核心：在子组件中调用父组件中的函数并传递实参
+// 核心：在子元件中呼叫父元件中的函式並傳遞實參
 
 import { useState } from "react"
 
 
 function Son ({ onGetSonMsg }) {
-  // Son组件中的数据
+  // Son元件中的資料
   const sonMsg = 'this is son msg'
   return (
     <div>

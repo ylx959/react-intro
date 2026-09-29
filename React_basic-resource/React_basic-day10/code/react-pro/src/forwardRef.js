@@ -1,6 +1,6 @@
 import { forwardRef, useRef } from "react"
 
-// 子组件
+// 子元件
 // function Son () {
 //   return <input type="text" />
 // }
@@ -10,7 +10,7 @@ const Son = forwardRef((props, ref) => {
 })
 
 
-// 父组件
+// 父元件
 function App () {
   const sonRef = useRef(null)
   const showRef = () => {

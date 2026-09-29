@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react"
 
 function App () {
-  // 1. 沒有依賴項  初始 + 組件更新
+  // 1. 沒有依賴項  初始 + 元件更新
   const [count, setCount] = useState(0)
   // useEffect(() => {
-  //   console.log('副作用函數執行了')
+  //   console.log('副作用函式執行了')
   // })
 
-  // 2. 傳入空數組依賴  初始執行一次
+  // 2. 傳入空陣列依賴  初始執行一次
   // useEffect(() => {
-  //   console.log('副作用函數執行了')
+  //   console.log('副作用函式執行了')
   // }, [])
 
   // 3. 傳入特定依賴項  初始 + 依賴項變化時執行

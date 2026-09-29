@@ -3,16 +3,16 @@
 import { Component } from "react"
 
 class Counter extends Component {
-  // 编写组件的逻辑代码
-  // 1. 状态变量  2. 事件回调  3.UI(JSX)
-  // 1. 定义状态变量
+  // 編寫元件的邏輯程式碼
+  // 1. 狀態變數  2. 事件回撥  3.UI(JSX)
+  // 1. 定義狀態變數
   state = {
     count: 0
   }
 
-  // 2. 定义事件回调修改状态数据
+  // 2. 定義事件回撥修改狀態資料
   setCount = () => {
-    // 修改状态数据
+    // 修改狀態資料
     this.setState({
       count: this.state.count + 1
     })

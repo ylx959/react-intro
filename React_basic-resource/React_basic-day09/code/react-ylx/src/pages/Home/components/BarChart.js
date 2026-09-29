@@ -1,20 +1,20 @@
-// 柱状图组件
+// 柱狀圖元件
 import * as echarts from 'echarts'
 import { useEffect, useRef } from 'react'
-// 1. 把功能代码都放到这个组件中
-// 2. 把可变的部分抽象成prop参数
+// 1. 把功能程式碼都放到這個元件中
+// 2. 把可變的部分抽象成prop引數
 
 const BarChart = ({ title }) => {
   const chartRef = useRef(null)
   useEffect(() => {
-    // 保证dom可用 才进行图表的渲染
-    // 1. 获取渲染图表的dom节点
+    // 保證dom可用 才進行圖表的渲染
+    // 1. 獲取渲染圖表的dom節點
     const chartDom = chartRef.current
 
-    // 2. 图表初始化生成图表实例对象
+    // 2. 圖表初始化生成圖表實例物件
     const myChart = echarts.init(chartDom)
 
-    // 3. 准备图表参数
+    // 3. 準備圖表引數
     const option = {
       title: {
         text: title
@@ -33,7 +33,7 @@ const BarChart = ({ title }) => {
         }
       ]
     }
-    // 4. 使用图表参数完成图表的渲染
+    // 4. 使用圖表引數完成圖表的渲染
     option && myChart.setOption(option)
 
   }, [title])

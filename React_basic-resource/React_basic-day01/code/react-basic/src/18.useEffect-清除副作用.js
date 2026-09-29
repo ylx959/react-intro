@@ -9,7 +9,7 @@ function Son () {
     }, 1000)
 
     return () => {
-      // 清除副作用(組件卸載時)
+      // 清除副作用(元件解除安裝時)
       clearInterval(timer)
     }
   }, [])//useEffect
@@ -18,7 +18,7 @@ function Son () {
 }
 
 function App () {
-  // 通過條件渲染模擬組件卸載
+  // 通過條件渲染模擬元件解除安裝
   const [show, setShow] = useState(true)
   return (
     <div>

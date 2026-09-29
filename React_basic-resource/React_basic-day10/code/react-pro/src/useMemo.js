@@ -1,9 +1,9 @@
 // useMemo
-// 缓存: 消耗非常大的计算
+// 快取: 消耗非常大的計算
 
 import { useMemo, useState } from "react"
 
-// 计算斐波那契数列之和
+// 計算斐波那契數列之和
 function fib (n) {
   console.log('计算函数执行了')
   if (n < 3)
@@ -16,7 +16,7 @@ function App () {
 
 
   const result = useMemo(() => {
-    // 返回计算得到的结果
+    // 返回計算得到的結果
     return fib(count1)
   }, [count1])
 

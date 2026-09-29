@@ -1,4 +1,4 @@
-// 導入樣式
+// 匯入樣式
 import './index.css'
 
 const style = {

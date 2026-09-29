@@ -40,7 +40,7 @@ const Foods = ({
             {price}
           </div>
           <div className="goods-count">
-            {/* 添加商品 */}
+            {/* 新增商品 */}
             <span className="plus" onClick={() => dispatch(addCart({
               id,
               picture,

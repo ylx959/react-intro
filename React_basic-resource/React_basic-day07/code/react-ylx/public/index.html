@@ -29,7 +29,7 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <!-- 动态插入cdn资源url -->
+  <!-- 動態插入cdn資源url -->
   <% htmlWebpackPlugin.options.cdn.js.forEach(cdnURL=> { %>
     <script src="<%= cdnURL %>"></script>
     <% }) %>

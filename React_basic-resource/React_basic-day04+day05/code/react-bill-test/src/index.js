@@ -7,7 +7,7 @@ import router from './router'
 import { Provider } from 'react-redux'
 import store from './store'
 
-// 导入定制主题文件
+// 匯入定製主題檔案
 import './theme.css'
 
 const total = sum(1, 3)

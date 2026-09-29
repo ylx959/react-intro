@@ -8,13 +8,13 @@ import { v4 as uuidV4 } from 'uuid'
 import dayjs from 'dayjs'
 import axios from 'axios'
 
-// 當前登入用戶資訊
+// 當前登入使用者資訊
 const user = {
-  // 用戶id
+  // 使用者id
   uid: '30009257',
-  // 用戶頭像
+  // 使用者頭像
   avatar,
-  // 用戶暱稱
+  // 使用者暱稱
   uname: '黑馬前端',
 }
 // 導航 Tab 陣列
@@ -64,7 +64,7 @@ function Item ({ item, onDel }) {
       </div>
 
       <div className="content-wrap">
-        {/* 用戶名 */}
+        {/* 使用者名稱 */}
         <div className="user-info">
           <div className="user-name">{item.user.uname}</div>
         </div>
@@ -103,7 +103,7 @@ const App = () => {
   }
 
   // tab切換功能
-  // 1. 點擊誰就把誰的type記錄下來
+  // 1. 點選誰就把誰的type記錄下來
   // 2. 通過記錄的type和每一項遍歷時的type做匹配 控制啟用類別名稱的顯示
   const [type, setType] = useState('hot')
   const handleTabChange = (type) => {
@@ -170,7 +170,7 @@ const App = () => {
       <div className="reply-wrap">
         {/* 發表評論 */}
         <div className="box-normal">
-          {/* 當前用戶頭像 */}
+          {/* 當前使用者頭像 */}
           <div className="reply-box-avatar">
             <div className="bili-avatar">
               <img className="bili-avatar-img" src={avatar} alt="用戶頭像" />

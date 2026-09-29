@@ -6,7 +6,7 @@ const Layout = () => {
       我是一级路由layout组件
       <Link to="/">面板</Link>
       <Link to="/about">关于</Link>
-      {/* 配置二级路由的出口 */}
+      {/* 配置二級路由的出口 */}
       <Outlet />
     </div>
   )

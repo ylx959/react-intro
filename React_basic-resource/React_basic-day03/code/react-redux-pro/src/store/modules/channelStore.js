@@ -14,7 +14,7 @@ const channelStore = createSlice({
 })
 
 
-// 异步请求部分
+// 非同步請求部分
 const { setChannels } = channelStore.actions
 
 const fetchChannlList = () => {

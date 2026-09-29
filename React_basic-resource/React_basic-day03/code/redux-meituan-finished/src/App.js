@@ -10,34 +10,34 @@ import { useEffect } from 'react'
 
 
 const App = () => {
-  // 触发action执行
-  // 1. useDispatch -> dispatch 2. actionCreater导入进来 3.useEffect
+  // 觸發action執行
+  // 1. useDispatch -> dispatch 2. actionCreater匯入進來 3.useEffect
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchFoodsList())
   }, [dispatch])
 
-  // 获取foodsList渲染数据列表
+  // 獲取foodsList渲染資料列表
   // 1. useSelector
   const { foodsList, activeIndex } = useSelector(state => state.foods)
 
   return (
     <div className="home">
-      {/* 导航 */}
+      {/* 導航 */}
       <NavBar />
 
-      {/* 内容 */}
+      {/* 內容 */}
       <div className="content-wrap">
         <div className="content">
           <Menu />
           <div className="list-content">
             <div className="goods-list">
-              {/* 外卖商品列表 */}
+              {/* 外賣商品列表 */}
               {foodsList.map((item, index) => {
                 return (
                   activeIndex === index && <FoodsCategory
                     key={item.tag}
-                    // 列表标题
+                    // 列表標題
                     name={item.name}
                     // 列表商品
                     foods={item.foods}
@@ -49,7 +49,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* 购物车 */}
+      {/* 購物車 */}
       <Cart />
     </div>
   )

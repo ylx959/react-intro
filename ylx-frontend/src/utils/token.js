@@ -8,7 +8,7 @@ const getToken = () => {
 }
 
 const removeToken = () => {
-  // TODO redux不删？
+  // TODO redux不刪？
   localStorage.removeItem(TOKEN_KEY)
 }
 

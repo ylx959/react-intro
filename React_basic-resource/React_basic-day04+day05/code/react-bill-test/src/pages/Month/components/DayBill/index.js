@@ -6,8 +6,8 @@ import { useState } from 'react'
 import Icon from '@/components/Icon'
 const DailyBill = ({ date, billList }) => {
   const dayResult = useMemo(() => {
-    // 计算单日统计
-    // 支出  /  收入  / 结余
+    // 計算單日統計
+    // 支出  /  收入  / 結餘
     const pay = billList.filter(item => item.type === 'pay').reduce((a, c) => a + c.money, 0)
     const income = billList.filter(item => item.type === 'income').reduce((a, c) => a + c.money, 0)
     return {
@@ -18,14 +18,14 @@ const DailyBill = ({ date, billList }) => {
 
   }, [billList])
 
-  // 控制展开收起
+  // 控制展開收起
   const [visible, setVisible] = useState(false)
   return (
     <div className={classNames('dailyBill')}>
       <div className="header">
         <div className="dateIcon">
           <span className="date">{date}</span>
-          {/* expand 有这个类名 展开的箭头朝上的样子 */}
+          {/* expand 有這個類名 展開的箭頭朝上的樣子 */}
           <span className={classNames('arrow', visible && 'expand')} onClick={() => setVisible(!visible)}></span>
         </div>
         <div className="oneLineOverview">
@@ -43,12 +43,12 @@ const DailyBill = ({ date, billList }) => {
           </div>
         </div>
       </div>
-      {/* 单日列表 */}
+      {/* 單日列表 */}
       <div className="billList" style={{ display: visible ? 'block' : 'none' }}>
         {billList.map(item => {
           return (
             <div className="bill" key={item.id}>
-              {/* 图标 */}
+              {/* 圖示 */}
               <Icon type={item.useFor} />
               <div className="detail">
                 <div className="billType">{billTypeToName[item.useFor]}</div>

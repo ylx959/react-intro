@@ -11,21 +11,21 @@ import dayjs from 'dayjs'
 
 const New = () => {
   const navigate = useNavigate()
-  // 1. 准备一个控制收入支出的状态
+  // 1. 準備一個控制收入支出的狀態
   const [billType, setBillType] = useState('pay') // pay-支出 income-收入
 
-  // 收集金额
+  // 收集金額
   const [money, setMoney] = useState(0)
   const moneyChange = (value) => {
     setMoney(value)
   }
 
-  // 收集账单类型
+  // 收集賬單型別
   const [useFor, setUseFor] = useState('')
   const dispatch = useDispatch()
-  // 保存账单
+  // 儲存賬單
   const saveBill = () => {
-    // 收集表单数据
+    // 收集表單資料
     const data = {
       type: billType,
       money: billType === 'pay' ? -money : +money,
@@ -35,11 +35,11 @@ const New = () => {
     console.log(data)
     dispatch(addBillList(data))
   }
-  // 存储选择的时间
+  // 儲存選擇的時間
   const [date, setDate] = useState()
-  // 控制时间打开关闭
+  // 控制時間開啟關閉
   const [dateVisible, setDateVisible] = useState(false)
-  // 确认选择时间
+  // 確認選擇時間
   const dateConfirm = (value) => {
     console.log(value)
     setDate(value)
@@ -74,7 +74,7 @@ const New = () => {
             <div className="date">
               <Icon type="calendar" className="icon" />
               <span className="text" onClick={() => setDateVisible(true)}>{dayjs(date).format('YYYY-MM-DD')}</span>
-              {/* 时间选择器 */}
+              {/* 時間選擇器 */}
               <DatePicker
                 className="kaDate"
                 title="记账日期"
@@ -98,7 +98,7 @@ const New = () => {
       </div>
 
       <div className="kaTypeList">
-        {/* 数据区域 */}
+        {/* 資料區域 */}
         {billListData[billType].map(item => {
           return (
             <div className="kaType" key={item.type}>

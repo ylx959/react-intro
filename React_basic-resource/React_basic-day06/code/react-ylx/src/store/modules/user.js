@@ -1,4 +1,4 @@
-// 和用户相关的状态管理
+// 和使用者相關的狀態管理
 
 import { createSlice } from '@reduxjs/toolkit'
 import { setToken as _setToken, getToken, removeToken } from '@/utils'
@@ -6,7 +6,7 @@ import { loginAPI, getProfileAPI } from '@/apis/user'
 
 const userStore = createSlice({
   name: "user",
-  // 数据状态
+  // 資料狀態
   initialState: {
     token: getToken() || '',
     userInfo: {}
@@ -29,15 +29,15 @@ const userStore = createSlice({
 })
 
 
-// 解构出actionCreater
+// 解構出actionCreater
 
 const { setToken, setUserInfo, clearUserInfo } = userStore.actions
 
-// 获取reducer函数
+// 獲取reducer函式
 
 const userReducer = userStore.reducer
 
-// 登录获取token异步方法封装
+// 登入獲取token非同步方法封裝
 const fetchLogin = (loginForm) => {
   return async (dispatch) => {
     const res = await loginAPI(loginForm)
@@ -45,7 +45,7 @@ const fetchLogin = (loginForm) => {
   }
 }
 
-// 获取个人用户信息异步方法
+// 獲取個人使用者資訊非同步方法
 const fetchUserInfo = () => {
   return async (dispatch) => {
     const res = await getProfileAPI()

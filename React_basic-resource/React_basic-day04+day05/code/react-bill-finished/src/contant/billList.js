@@ -90,7 +90,7 @@ export const getOverview = (data = []) => {
 }
 
 export const getMonthOverview = (data, month) => {
-  // 某个月的账单可能有多个
+  // 某個月的賬單可能有多個
   const bill = data.filter(item => {
     return month === dayjs(item.date).get('month')
   })

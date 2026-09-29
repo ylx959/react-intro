@@ -71,7 +71,7 @@ const GeekLayout = () => {
             style={{height: '100%', borderRight: 0}}></Menu>
         </Sider>
         <Layout className="layout-content" style={{padding: 20}}>
-          {/*二级路由的出口*/}
+          {/*二級路由的出口*/}
           <Outlet/>
         </Layout>
       </Layout>

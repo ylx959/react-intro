@@ -40,18 +40,18 @@ const GeekLayout = () => {
   }
 
   // 反向高亮
-  // 1. 获取当前路由路径
+  // 1. 獲取當前路由路徑
   const location = useLocation()
   console.log(location.pathname)
   const selectedkey = location.pathname
 
-  // 触发个人用户信息action
+  // 觸發個人使用者資訊action
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchUserInfo())
   }, [dispatch])
 
-  // 退出登录确认回调
+  // 退出登入確認回撥
   const onConfirm = () => {
     console.log('确认退出')
     dispatch(clearUserInfo())
@@ -83,7 +83,7 @@ const GeekLayout = () => {
             style={{ height: '100%', borderRight: 0 }}></Menu>
         </Sider>
         <Layout className="layout-content" style={{ padding: 20 }}>
-          {/* 二级路由的出口 */}
+          {/* 二級路由的出口 */}
           <Outlet />
         </Layout>
       </Layout>

@@ -8,7 +8,7 @@ type User = {
 }
 
 function App() {
-  // 1. 限制初始值的类型
+  // 1. 限制初始值的型別
   // const [user, setUser] = useState<User>({
   //   name: 'jack',
   //   age: 18,

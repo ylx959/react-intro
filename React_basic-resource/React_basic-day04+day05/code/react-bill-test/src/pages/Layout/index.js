@@ -34,7 +34,7 @@ const Layout = () => {
     dispatch(getBillList())
   }, [dispatch])
 
-  // 切换菜单跳转路由
+  // 切換選單跳轉路由
   const navigate = useNavigate()
   const swithRoute = (path) => {
     console.log(path)

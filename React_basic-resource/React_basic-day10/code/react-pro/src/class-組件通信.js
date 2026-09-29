@@ -1,15 +1,15 @@
-// Class API 父子通信
+// Class API 父子通訊
 
 import { Component } from "react"
-// 1. 父传子  直接通过prop子组件标签身上绑定父组件中的数据即可
-// 2. 子传父  在子组件标签身上绑定父组件中的函数，子组件中调用这个函数传递参数
+// 1. 父傳子  直接通過prop子元件標籤身上繫結父元件中的資料即可
+// 2. 子傳父  在子元件標籤身上繫結父元件中的函式，子元件中呼叫這個函式傳遞引數
 
-// 总结
+// 總結
 // 1. 思想保持一致
-// 2. 类组件依赖于this
+// 2. 類元件依賴於this
 
 
-// 子组件
+// 子元件
 class Son extends Component {
   render () {
     // 使用this.props.msg
@@ -20,7 +20,7 @@ class Son extends Component {
   }
 }
 
-// 父组件
+// 父元件
 class Parent extends Component {
   state = {
     msg: 'this is parent msg'

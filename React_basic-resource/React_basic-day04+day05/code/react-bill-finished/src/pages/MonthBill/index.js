@@ -29,7 +29,7 @@ const MonthlyBill = () => {
     )
     const sortedKeys = orderBy(
       Object.keys(billGroup),
-      // 转成日期数字，在进行比较
+      // 轉成日期數字，在進行比較
       item => +new Date(item),
       'desc'
     )

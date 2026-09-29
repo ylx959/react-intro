@@ -3,18 +3,18 @@ import { useEffect } from 'react'
 import { create } from 'zustand'
 const URL = 'http://geek.itheima.net/v1_0/channels'
 
-// 1. 创建store
-// 语法容易出错
-// 1. 函数参数必须返回一个对象 对象内部编写状态数据和方法
-// 2. set是用来修改数据的专门方法必须调用它来修改数据
-// 语法1：参数是函数 需要用到老数据的场景   
-// 语法2：参数直接是一个对象  set({ count: 100 })
+// 1. 建立store
+// 語法容易出錯
+// 1. 函式引數必須返回一個物件 物件內部編寫狀態資料和方法
+// 2. set是用來修改資料的專門方法必須呼叫它來修改資料
+// 語法1：引數是函式 需要用到老資料的場景   
+// 語法2：引數直接是一個物件  set({ count: 100 })
 
 const useStore = create((set) => {
   return {
-    // 状态数据
+    // 狀態資料
     count: 0,
-    // 修改状态数据的方法
+    // 修改狀態資料的方法
     inc: () => {
       set((state) => ({ count: state.count + 1 }))
     },
@@ -30,7 +30,7 @@ const useStore = create((set) => {
   }
 })
 
-// 2. 绑定store到组件
+// 2. 繫結store到元件
 // useStore => { count, inc }
 
 function App () {

@@ -32,7 +32,7 @@ const Layout = () => {
   return (
     <div className="kaLayout">
       <div className="page">
-        {/* 二级路由出口 */}
+        {/* 二級路由出口 */}
         <Outlet />
       </div>
 

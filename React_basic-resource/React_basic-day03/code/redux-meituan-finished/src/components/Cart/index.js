@@ -7,12 +7,12 @@ import './index.scss'
 
 const Cart = () => {
   const { cartList } = useSelector(state => state.foods)
-  // 计算总价 
+  // 計算總價 
   const totalPrice = cartList.reduce((a, c) => a + c.price * c.count, 0)
 
   const dispatch = useDispatch()
 
-  // 控制购物车打开关闭的状态
+  // 控制購物車開啟關閉的狀態
   const [visible, setVisible] = useState(false)
 
   const onShow = () => {
@@ -22,18 +22,18 @@ const Cart = () => {
   }
   return (
     <div className="cartContainer">
-      {/* 遮罩层 添加visible类名可以显示出来 */}
+      {/* 遮罩層 新增visible類名可以顯示出來 */}
       <div
         className={classNames('cartOverlay', visible && 'visible')}
         onClick={() => setVisible(false)}
       />
       <div className="cart">
-        {/* fill 添加fill类名购物车高亮*/}
-        {/* 购物车数量 */}
+        {/* fill 新增fill類名購物車高亮*/}
+        {/* 購物車數量 */}
         <div onClick={onShow} className={classNames('icon', cartList.length > 0 && 'fill')}>
           {cartList.length > 0 && <div className="cartCornerMark">{cartList.length}</div>}
         </div>
-        {/* 购物车价格 */}
+        {/* 購物車價格 */}
         <div className="main">
           <div className="price">
             <span className="payableAmount">
@@ -43,14 +43,14 @@ const Cart = () => {
           </div>
           <span className="text">预估另需配送费 ¥5</span>
         </div>
-        {/* 结算 or 起送 */}
+        {/* 結算 or 起送 */}
         {cartList.length > 0 ? (
           <div className="goToPreview">去结算</div>
         ) : (
           <div className="minFee">1元起送</div>
         )}
       </div>
-      {/* 添加visible类名 div会显示出来 */}
+      {/* 新增visible類名 div會顯示出來 */}
       <div className={classNames('cartPanel', visible && 'visible')}>
         <div className="header">
           <span className="text">购物车</span>
@@ -59,7 +59,7 @@ const Cart = () => {
           </span>
         </div>
 
-        {/* 购物车列表 */}
+        {/* 購物車列表 */}
         <div className="scrollArea">
           {cartList.map(item => {
             return (
@@ -75,7 +75,7 @@ const Cart = () => {
                   </div>
                 </div>
                 <div className="skuBtnWrapper btnGroup">
-                  {/* 数量组件 */}
+                  {/* 數量元件 */}
                   <Count
                     count={item.count}
                     onPlus={() => dispatch(increCount({ id: item.id }))}

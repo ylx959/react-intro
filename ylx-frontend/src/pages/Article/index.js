@@ -17,7 +17,7 @@ const Article = () => {
     1: <Tag color="yellow">待审核</Tag>,
     2: <Tag color="green">审核通过</Tag>
   }
-  // 准备列数据
+  // 準備列資料
   const columns = [
     {
       title: '封面',
@@ -79,7 +79,7 @@ const Article = () => {
       }
     }
   ]
-  // 准备表格body数据
+  // 準備表格body資料
   const data = [
     {
       id: '8218',
@@ -173,7 +173,7 @@ const Article = () => {
           </Form.Item>
 
           <Form.Item label="日期" name="date">
-            {/* 传入locale属性 控制中文显示*/}
+            {/* 傳入locale屬性 控制中文顯示*/}
             <RangePicker locale={locale}></RangePicker>
           </Form.Item>
 
