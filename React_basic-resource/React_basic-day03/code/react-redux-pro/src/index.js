@@ -6,8 +6,12 @@ import reportWebVitals from './reportWebVitals'
 import store from './store'
 import { Provider } from 'react-redux'
 
+//左邊 store：Provider 規定的 prop 名稱，必須叫 store
+//右邊 store：你自己建立的 Redux store 變數名稱，可以改
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
+  
   <Provider store={store}>
     <App />
   </Provider>
